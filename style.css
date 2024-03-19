@@ -20,11 +20,19 @@ html {
 
 .main {
   max-width: 600px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .main {
+    max-width: min(400px, 90%);
+  }
 }
 
 .nameAndPhoto {
@@ -60,7 +68,8 @@ p {
   font-style: normal;
 }
 
-.poppins-regular-italic {
+.poppins-regular-italic,
+#index {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: italic;
@@ -104,6 +113,8 @@ h1 {
 
 h1 {
   transition: color 200ms ease-in-out;
+  margin-bottom: 50px;
+  width: fit-content;
 
   &:hover {
     color: rgb(70, 252, 110);
