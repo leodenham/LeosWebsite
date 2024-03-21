@@ -3,9 +3,12 @@ let mouseY = 0;
 let allStars = [];
 let intervalId;
 
+let currentHue = 0;
+
 class Star {
-  constructor(element) {
+  constructor(element, context) {
     this.element = element;
+    this.context = context;
 
     this.x = mouseX;
     this.y = mouseY;
@@ -19,6 +22,10 @@ class Star {
   update() {
     this.element.style.left = this.x + "px";
     this.element.style.top = this.y + "px";
+    if (!this.context) {
+      this.element.style.backgroundColor = `hsl(${currentHue}deg 60% 70%)`;
+    }
+
     this.x += this.velX;
     this.y += this.velY;
     this.currentTime += 0.01;
@@ -29,18 +36,25 @@ class Star {
 const createStar = (context) => {
   const newStar = document.createElement("div");
   newStar.setAttribute("class", "star");
-  const starObject = new Star(newStar);
-  console.log(context);
+  const starObject = new Star(newStar, context);
 
   if (context === "github") {
     newStar.style.backgroundColor = "#f0f0f0";
   } else if (context === "linkedin") {
     newStar.style.backgroundColor = "#007ebb";
+  } else {
+    newStar.style.backgroundColor = `hsl(${currentHue}deg 60% 70%)`;
   }
 
   allStars.push(starObject);
+  starObject.update();
   document.body.appendChild(newStar);
 };
+
+var myName = document.getElementById("leosName");
+var github = document.getElementById("github");
+
+var linkedIn = document.getElementById("linkedin");
 
 const updateStars = () => {
   allStars.forEach((star) => star.update());
@@ -48,14 +62,15 @@ const updateStars = () => {
     .filter((star) => star.currentTime >= 2)
     .forEach((star) => document.body.removeChild(star.element));
   allStars = allStars.filter((star) => star.currentTime < 2);
+  currentHue += 0.5;
+
+  document.documentElement.style.setProperty(
+    "--my-color",
+    `hsl(${currentHue}deg, 60%, 70%)`
+  );
 };
 
 setInterval(updateStars, 1);
-
-var myName = document.getElementById("leosName");
-var github = document.getElementById("github");
-
-var linkedIn = document.getElementById("linkedin");
 
 myName.addEventListener("mouseover", () => {
   intervalId = setInterval(createStar, 1);
