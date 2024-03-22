@@ -112,10 +112,11 @@ h1 {
 }
 
 h1 {
+  transition: color 200ms ease-in-out;
   margin-bottom: 50px;
   width: fit-content;
 
   &:hover {
-    color: var(--my-color);
+    color: rgb(70, 252, 110);
   }
 }
