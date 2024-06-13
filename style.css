@@ -108,7 +108,7 @@ h1 {
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  z-index: -10;
+  z-index: -1;
 }
 
 h1 {
@@ -119,4 +119,38 @@ h1 {
   &:hover {
     color: rgb(70, 252, 110);
   }
+}
+.photoOfLeo {
+  z-index: -2;
+}
+.justleoFace {
+  position: relative;
+  top: -263px;
+  left: 3px;
+  transition: transform 300ms ease-in-out;
+  z-index: 10;
+  transform: translate(0);
+}
+
+.photoOfLeo:hover .justleoFace {
+  animation: bounce 300ms ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) translate(0deg);
+  }
+  33% {
+    transform: translateY(-15px) rotate(10deg);
+  }
+  66% {
+    transform: translateY(-30px) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(-45px) rotate(10deg);
+  }
+}
+
+.justBackground {
+  position: relative;
 }
