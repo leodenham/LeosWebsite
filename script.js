@@ -2,6 +2,10 @@ let mouseX = 0;
 let mouseY = 0;
 let allStars = [];
 let intervalId;
+const timestep = 0.5;
+const iterationsPerTimestep = 2;
+const newStarInterval = 10;
+const gravity = 0.5;
 
 class Star {
   constructor(element) {
@@ -10,7 +14,7 @@ class Star {
     this.x = mouseX;
     this.y = mouseY;
     this.velX = -5 + Math.random() * 10;
-    this.velY = -5 + Math.random() * 10;
+    this.velY = -Math.random() * 8;
     this.currentTime = 0;
     this.element.style.left = this.x + "px";
     this.element.style.top = this.y + "px";
@@ -19,10 +23,10 @@ class Star {
   update() {
     this.element.style.left = this.x + "px";
     this.element.style.top = this.y + "px";
-    this.x += this.velX;
-    this.y += this.velY;
-    this.currentTime += 0.01;
-    this.velY += 0.2;
+    this.x += (this.velX * timestep) / iterationsPerTimestep;
+    this.y += (this.velY * timestep) / iterationsPerTimestep;
+    this.currentTime += (timestep * 0.01) / iterationsPerTimestep;
+    this.velY += (gravity * timestep) / iterationsPerTimestep;
   }
 }
 
@@ -30,7 +34,6 @@ const createStar = (context) => {
   const newStar = document.createElement("div");
   newStar.setAttribute("class", "star");
   const starObject = new Star(newStar);
-  console.log(context);
 
   if (context === "github") {
     newStar.style.backgroundColor = "#f0f0f0";
@@ -43,11 +46,13 @@ const createStar = (context) => {
 };
 
 const updateStars = () => {
-  allStars.forEach((star) => star.update());
-  allStars
-    .filter((star) => star.currentTime >= 2)
-    .forEach((star) => document.body.removeChild(star.element));
-  allStars = allStars.filter((star) => star.currentTime < 2);
+  for (let i = 0; i < iterationsPerTimestep; i++) {
+    allStars.forEach((star) => star.update());
+    allStars
+      .filter((star) => star.currentTime >= 2)
+      .forEach((star) => document.body.removeChild(star.element));
+    allStars = allStars.filter((star) => star.currentTime < 2);
+  }
 };
 
 setInterval(updateStars, 1);
@@ -58,7 +63,7 @@ var github = document.getElementById("github");
 var linkedIn = document.getElementById("linkedin");
 
 myName.addEventListener("mouseover", () => {
-  intervalId = setInterval(createStar, 1);
+  intervalId = setInterval(createStar, newStarInterval);
 });
 
 myName.addEventListener("mouseout", () => {
