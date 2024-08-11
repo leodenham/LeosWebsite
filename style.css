@@ -175,6 +175,7 @@ h1 {
   h1 {
     font-size: 50px;
     max-width: 80px;
+    margin-block: 10px;
   }
 
   .photoOfLeo {
@@ -185,5 +186,9 @@ h1 {
   .justleoFace {
     top: -86px;
     left: 3px;
+  }
+
+  .main {
+    gap: 0;
   }
 }
