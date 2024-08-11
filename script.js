@@ -96,7 +96,8 @@ linkedIn.addEventListener("mouseout", () => {
   clearInterval(intervalId);
 });
 
-photoOfLeo.addEventListener("mouseover", () => {
+photoOfLeo.addEventListener("mouseover", (e) => {
+  console.log(e);
   intervalId = setInterval(() => createStar("photoOfLeo"), newStarInterval);
 });
 
@@ -108,3 +109,12 @@ document.addEventListener("mousemove", function (e) {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
+
+const leosName = document.getElementById("leosName");
+
+setInterval(() => {
+  const italicLevel = Math.floor(Math.random() * 9) + 1;
+  const weight = Math.random() * 500 + 400;
+  const width = Math.random() * 100 + 50;
+  leosName.style.fontVariationSettings = `"ital" ${italicLevel}, "wght" ${weight}, "wdth" ${width}`;
+}, 1000);
