@@ -10,8 +10,8 @@ body {
 }
 
 #leosName {
-  font-family: "reflex-pro-variable", sans-serif;
-  font-variation-settings: "ital" 9, "wght" 900, "wdth" 100;
+  font-family: 'reflex-pro-variable', sans-serif;
+  font-variation-settings: 'ital' 0, 'wght' 900, 'wdth' 100;
   transition: font-variation-settings 80ms ease-out;
 }
 
@@ -69,27 +69,27 @@ html {
 .poppins-regular,
 span,
 p {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .poppins-medium {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
 .poppins-regular-italic,
 #index {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-style: italic;
 }
 
 .poppins-medium-italic,
 h1 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-style: italic;
 }
@@ -191,4 +191,11 @@ h1 {
   .main {
     gap: 0;
   }
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 0;
+  margin-bottom: -32px;
+  margin-left: 16px;
 }
