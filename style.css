@@ -66,32 +66,29 @@ html {
   border-radius: 10px;
 }
 
-.poppins-regular,
 span,
 p {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 20px;
 }
 
-.poppins-medium {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-regular-italic,
 #index {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-style: italic;
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-wrap: pretty;
+  font-size: 20px;
 }
 
-.poppins-medium-italic,
 h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-style: italic;
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-wrap: pretty;
 }
 
 .logo {
@@ -194,7 +191,11 @@ h1 {
 }
 
 h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-wrap: pretty;
   margin-top: 0;
   margin-bottom: -32px;
   margin-left: 16px;
