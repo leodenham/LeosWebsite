@@ -1,0 +1,14 @@
+{
+  "name": "leoswebsite",
+  "private": true,
+  "scripts": {
+    "build": "bun build src/script.ts --outdir ./build",
+    "watch": "bun build src/script.ts --outdir ./build --watch"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
