@@ -5,7 +5,7 @@ let intervalId: ReturnType<typeof setInterval>;
 const newStarInterval = 10;
 var photoOfLeo = document.getElementById("photoOfLeoParent");
 
-const createStar = (context: "photoOfLeo" | "github" | "linkedin") => {
+const createStar = (color: string, isPhotoOfLeo?: boolean) => {
   if (!photoOfLeo) {
     return;
   }
@@ -13,7 +13,7 @@ const createStar = (context: "photoOfLeo" | "github" | "linkedin") => {
   newStar.setAttribute("class", "star");
   let x = undefined;
   let y = undefined;
-  if (context === "photoOfLeo") {
+  if (isPhotoOfLeo) {
     var rect = photoOfLeo.getBoundingClientRect();
     // Calculate the center coordinates
     x = rect.left + rect.width / 2;
@@ -21,16 +21,27 @@ const createStar = (context: "photoOfLeo" | "github" | "linkedin") => {
   }
   const starObject = new Star(newStar, x, y);
 
-  if (context === "github") {
-    newStar.style.backgroundColor = "#f0f0f0";
-  } else if (context === "linkedin") {
-    newStar.style.backgroundColor = "#007ebb";
-  } else if (context === "photoOfLeo") {
-    newStar.style.backgroundColor = "#eb213f";
-  }
+  newStar.style.backgroundColor = color;
 
   allStars.push(starObject);
   document.body.appendChild(newStar);
+};
+
+export const createAllStarElements = () => {
+  const allElements = document.querySelectorAll("[data-star-color]");
+
+  console.log(allElements);
+
+  allElements.forEach((el) => {
+    const colour: string = el.attributes["data-star-color"].value;
+    el?.addEventListener("mouseover", () => {
+      intervalId = setInterval(() => createStar(colour), newStarInterval);
+    });
+
+    el?.addEventListener("mouseout", () => {
+      clearInterval(intervalId);
+    });
+  });
 };
 
 const updateStars = () => {
@@ -58,7 +69,7 @@ myName?.addEventListener("mouseout", () => {
 });
 
 github?.addEventListener("mouseover", () => {
-  intervalId = setInterval(() => createStar("github"), newStarInterval);
+  intervalId = setInterval(() => createStar("#f0f0f0"), newStarInterval);
 });
 
 github?.addEventListener("mouseout", () => {
@@ -66,7 +77,7 @@ github?.addEventListener("mouseout", () => {
 });
 
 linkedIn?.addEventListener("mouseover", () => {
-  intervalId = setInterval(() => createStar("linkedin"), newStarInterval);
+  intervalId = setInterval(() => createStar("#007ebb"), newStarInterval);
 });
 
 linkedIn?.addEventListener("mouseout", () => {
@@ -74,7 +85,7 @@ linkedIn?.addEventListener("mouseout", () => {
 });
 
 photoOfLeo?.addEventListener("mouseover", (e) => {
-  intervalId = setInterval(() => createStar("photoOfLeo"), newStarInterval);
+  intervalId = setInterval(() => createStar("#eb213f", true), newStarInterval);
 });
 
 photoOfLeo?.addEventListener("mouseout", () => {

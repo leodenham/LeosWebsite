@@ -3,12 +3,16 @@
   "private": true,
   "scripts": {
     "build": "bun build src/script.ts --outdir ./build",
-    "watch": "bun build src/script.ts --outdir ./build --watch"
+    "watch": "bun build src/script.ts src/parse_response.ts --outdir ./build --watch"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "wrangler": "^4.61.1"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@openrouter/sdk": "^0.5.1"
   }
 }

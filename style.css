@@ -1,202 +1,237 @@
 body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 #leosName {
-  font-family: 'reflex-pro-variable', sans-serif;
-  font-variation-settings: 'ital' 0, 'wght' 900, 'wdth' 100;
-  transition: font-variation-settings 80ms ease-out;
+    font-family: "reflex-pro-variable", sans-serif;
+    font-variation-settings:
+        "ital" 0,
+        "wght" 900,
+        "wdth" 100;
+    transition: font-variation-settings 80ms ease-out;
 }
 
 @media (min-width: 768px) {
-  #leosName {
-    font-size: 50px;
-  }
+    #leosName {
+        font-size: 50px;
+    }
 }
 
 html {
-  background-color: #0f0f0f;
-  height: 100%;
+    background-color: #0f0f0f;
+    height: 100%;
 }
 
 * {
-  color: #e0e0e0;
+    color: #e0e0e0;
 }
 
 .main {
-  max-width: 600px;
+    max-width: 600px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 30px;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
 }
 
 @media (max-width: 767px) {
-  .main {
-    max-width: min(400px, 90%);
-  }
+    .main {
+        max-width: min(400px, 90%);
+    }
 }
 
 .nameAndPhoto {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .photoOfLeo {
-  max-width: 256px;
-  max-height: 256px;
-  border-radius: 8px;
+    max-width: 256px;
+    max-height: 256px;
+    border-radius: 8px;
 }
 
 .coolDropShadow {
-  box-shadow: 10px 10px 0px #d0d0d0;
-  border: #d0d0d0 3px solid;
-  border-radius: 10px;
+    box-shadow: 10px 10px 0px #d0d0d0;
+    border: #d0d0d0 3px solid;
+    border-radius: 10px;
 }
 
 span,
 p {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
 }
 
 #index {
-  font-family: 'Inter', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  text-wrap: pretty;
-  font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    text-wrap: pretty;
+    font-size: 20px;
 }
 
 h1 {
-  font-family: 'Inter', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  text-wrap: pretty;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    text-wrap: pretty;
 }
 
 .logo {
-  height: 32px;
-  width: 32px;
-  box-shadow: 4px 4px 0px #d0d0d0;
-  border: #d0d0d0 3px solid;
-  border-radius: 10px;
-  transition: box-shadow 0.3s;
+    height: 32px;
+    width: 32px;
+    box-shadow: 4px 4px 0px #d0d0d0;
+    border: #d0d0d0 3px solid;
+    border-radius: 10px;
+    transition: box-shadow 0.3s;
 
-  &:hover {
-    box-shadow: 8px 8px 0px #d0d0d0;
-  }
+    &:hover {
+        box-shadow: 8px 8px 0px #d0d0d0;
+    }
 }
 
 .logosSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }
 
 .star {
-  background-color: rgb(70, 252, 110);
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  z-index: -1;
+    background-color: rgb(70, 252, 110);
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    z-index: -1;
 }
 
 h1 {
-  transition: color 200ms ease-in-out;
-  margin-bottom: 50px;
-  width: fit-content;
+    transition: color 200ms ease-in-out;
+    margin-bottom: 50px;
+    width: fit-content;
 
-  &:hover {
-    color: rgb(70, 252, 110);
-  }
+    &:hover {
+        color: rgb(70, 252, 110);
+    }
 }
 .photoOfLeo {
-  z-index: -2;
+    z-index: -2;
 }
 .justleoFace {
-  position: relative;
-  top: -263px;
-  left: 3px;
-  transition: transform 300ms ease-in-out;
-  z-index: 10;
-  transform: translate(0);
-  pointer-events: none;
+    position: relative;
+    top: -263px;
+    left: 3px;
+    transition: transform 300ms ease-in-out;
+    z-index: 10;
+    transform: translate(0);
+    pointer-events: none;
 }
 
 .photoOfLeo:hover .justleoFace {
-  animation: bounce 300ms ease-in-out infinite alternate;
+    animation: bounce 300ms ease-in-out infinite alternate;
 }
 
 @keyframes bounce {
-  0% {
-    transform: translateY(0) translate(0deg);
-  }
-  33% {
-    transform: translateY(-15px) rotate(10deg);
-  }
-  66% {
-    transform: translateY(-30px) rotate(-10deg);
-  }
-  100% {
-    transform: translateY(-45px) rotate(10deg);
-  }
+    0% {
+        transform: translateY(0) translate(0deg);
+    }
+    33% {
+        transform: translateY(-15px) rotate(10deg);
+    }
+    66% {
+        transform: translateY(-30px) rotate(-10deg);
+    }
+    100% {
+        transform: translateY(-45px) rotate(10deg);
+    }
 }
 
 .justBackground {
-  position: relative;
+    position: relative;
 }
 @media (max-width: 768px) {
-  * {
-    font-size: 12px;
-  }
+    * {
+        font-size: 12px;
+    }
 
-  h1 {
-    font-size: 50px;
-    max-width: 80px;
-    margin-block: 10px;
-  }
+    h1 {
+        font-size: 50px;
+        max-width: 80px;
+        margin-block: 10px;
+    }
 
-  .photoOfLeo {
-    width: 80px;
-    height: 80px;
-  }
+    .photoOfLeo {
+        width: 80px;
+        height: 80px;
+    }
 
-  .justleoFace {
-    top: -86px;
-    left: 3px;
-  }
+    .justleoFace {
+        top: -86px;
+        left: 3px;
+    }
 
-  .main {
-    gap: 0;
-  }
+    .main {
+        gap: 0;
+    }
 }
 
 h3 {
-  font-family: 'Inter', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  text-wrap: pretty;
-  margin-top: 0;
-  margin-bottom: -32px;
-  margin-left: 16px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    text-wrap: pretty;
+    margin-top: 0;
+    margin-bottom: -32px;
+    margin-left: 16px;
+}
+
+#aiSection {
+    position: absolute;
+    bottom: 50px;
+    padding: 8px;
+    border-radius: 24px;
+    background: #242736;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+#aiButton {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #008dfe;
+    border-radius: 12px;
+    padding: 4px;
+}
+
+#aiInput {
+    background: none;
+    border: none;
+
+    &:focus-visible {
+        background: none;
+        outline: none;
+    }
 }
