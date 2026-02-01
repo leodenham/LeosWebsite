@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { OpenRouter } from "@openrouter/sdk";
 
 interface Env {
@@ -27,7 +28,7 @@ function asyncIterableToReadableStream<T>(
 }
 
 const openRouter = new OpenRouter({
-  apiKey: process.env['OPENROUTER_API_KEY']
+  apiKey: process.env["OPENROUTER_API_KEY"],
   httpReferer: "leodenham.com",
   xTitle: "Leodenham.com",
 });
